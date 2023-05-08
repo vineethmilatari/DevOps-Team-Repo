@@ -7,6 +7,15 @@ pipeline {
                 git 'https://github.com/ramdevops03/Development-Team-Repo.git'
             }
         }
-        
+        stage('bulid Application Code') {
+            steps {
+                sh 'mvn clean -f pom.xml'
+            }
+        }
+        stage('deploy') {
+            steps {
+                 echo 'deploy the code'
+            }
+        }
     }
 }
