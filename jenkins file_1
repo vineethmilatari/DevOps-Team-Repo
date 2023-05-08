@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Application Code') {
+        stage('Clone') {
             steps {
                 git 'https://github.com/ramdevops03/Development-Team-Repo.git'
             }
         }
         stage('bulid Application Code') {
             steps {
-                sh 'maven package -f pom.xml'
+                sh 'mvn package -f pom.xml'
             }
         }
         stage('deploy') {
